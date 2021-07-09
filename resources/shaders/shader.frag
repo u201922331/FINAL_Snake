@@ -10,16 +10,18 @@ uniform int num;
 void main() {
 	vec4 color;
 	switch(mode) {
-	case 1:
+	case 1:  // Serpiente
 		if (num == 0)
-			color = vec4(vec3(0.75f, 0.0f, 0.0f), 1.0f);
+			color = vec4(0.75f, 0.0f, 0.0f, 1.0f);
 		else
 			if (num % 2 == 0)
-				color = vec4(vec3(0.0f, 1.0f, 0.0f), 1.0f);
+				color = vec4(0.0f, 1.0f, 0.0f, 1.0f);
 			else
-				color = vec4(vec3(0.0f, 0.5f, 0.0f), 1.0f);
+				color = vec4(0.0f, 0.5f, 0.0f, 1.0f);
 		break;
-	default:
+	case 2: // Comida
+		color = vec4(1.0f, 0.6f, 0.0f, 1.0f); break;
+	case 0:  // Default: Paredes
 		color = vec4(1.0f); break;
 	}
 
